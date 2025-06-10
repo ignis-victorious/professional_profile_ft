@@ -177,7 +177,6 @@ class ProfileApp:
                             controls=[self.profile_pic],
                             alignment=ft.MainAxisAlignment.CENTER,
                         ),
-                        #
                         Divider(height=20, color=ft.Colors.TRANSPARENT),
                         ResponsiveRow(
                             controls=[
@@ -267,7 +266,7 @@ class ProfileApp:
             self.profile_displays()
         e.page.update()
 
-    def profile_displays(self):
+    def profile_displays(self) -> None:
         profile_content: Column = Column(
             controls=[
                 Text(
@@ -281,50 +280,52 @@ class ProfileApp:
                     controls=[
                         Text(value="Name:", weight=ft.FontWeight.BOLD, width=120),
                         Text(
-                            value=f"{self.profile_data['first_name']}{self.profile_data['last_name']}"
+                            value=f"{self.profile_data['first_name']}  {self.profile_data['last_name']}"
                         ),
                     ]
                 ),
                 Row(
                     controls=[
                         Text(value="Email:", weight=ft.FontWeight.BOLD, width=120),
-                        Text(value=str(self.profile_data["email"])),
+                        Text(value=str(object=self.profile_data["email"])),
                     ]
                 ),
                 Row(
                     controls=[
                         Text(value="Phone:", weight=ft.FontWeight.BOLD, width=120),
-                        Text(value=str(self.profile_data["phone"])),
+                        Text(value=str(object=self.profile_data["phone"])),
                     ]
                 ),
                 Row(
                     controls=[
                         Text(value="Birth Date:", weight=ft.FontWeight.BOLD, width=120),
-                        Text(value=str(self.profile_data["birth_date"])),
+                        Text(value=str(object=self.profile_data["birth_date"])),
                     ]
                 ),
                 Row(
                     controls=[
                         Text(value="Gender:", weight=ft.FontWeight.BOLD, width=120),
-                        Text(value=str(self.profile_data["gender"])),
+                        Text(value=str(object=self.profile_data["gender"])),
                     ]
                 ),
                 Row(
                     controls=[
                         Text(value="Country:", weight=ft.FontWeight.BOLD, width=120),
-                        Text(value=str(self.profile_data["country"])),
+                        Text(value=str(object=self.profile_data["country"])),
                     ]
                 ),
                 Row(
                     controls=[
                         Text(value="Occupation:", weight=ft.FontWeight.BOLD, width=120),
-                        Text(value=str(self.profile_data["occupation"])),
+                        Text(value=str(object=self.profile_data["occupation"])),
                     ]
                 ),
                 Column(
                     controls=[
                         Text(value="bio:", weight=ft.FontWeight.BOLD),
-                        Text(value=str(self.profile_data["bio"]), max_lines=None),
+                        Text(
+                            value=str(object=self.profile_data["bio"]), max_lines=None
+                        ),
                     ],
                     spacing=5,
                 ),
